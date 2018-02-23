@@ -1,4 +1,4 @@
-package ir.marjan.spring.model.entities;
+package ir.moke.spring.model.entities;
 
 import javax.persistence.*;
 

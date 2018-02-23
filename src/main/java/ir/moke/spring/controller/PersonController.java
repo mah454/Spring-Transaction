@@ -1,7 +1,7 @@
-package ir.marjan.spring.controller;
+package ir.moke.spring.controller;
 
-import ir.marjan.spring.model.entities.Person;
-import ir.marjan.spring.model.repository.PersonRepository;
+import ir.moke.spring.model.entities.Person;
+import ir.moke.spring.model.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;

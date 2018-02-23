@@ -1,6 +1,6 @@
-package ir.marjan.spring.model.repository;
+package ir.moke.spring.model.repository;
 
-import ir.marjan.spring.model.entities.Person;
+import ir.moke.spring.model.entities.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
