@@ -19,7 +19,7 @@
     <mvc:annotation-driven/>
     <tx:annotation-driven/>
 
-    <context:component-scan base-package="ir.marjan.spring.controller,ir.marjan.spring.model.repository"/>
+    <context:component-scan base-package="ir.moke.spring.controller,ir.moke.spring.model.repository"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="viewResolver">
         <property name="prefix" value="/"/>
@@ -28,7 +28,7 @@
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="packagesToScan" value="ir.marjan.spring.model.entities" />
+        <property name="packagesToScan" value="ir.moke.spring.model.entities" />
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
         </property>
