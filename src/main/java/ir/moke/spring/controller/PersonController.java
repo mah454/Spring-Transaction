@@ -20,7 +20,7 @@ public class PersonController {
     private Person person;
     private String action = "add";
 
-    @RequestMapping(value = "/person.do")
+    @RequestMapping(value = "/")
     public String getViewPerson(Model model) {
         model.addAttribute("personList", repository.select());
         model.addAttribute("person", person);
@@ -28,32 +28,32 @@ public class PersonController {
         return "index";
     }
 
-    @RequestMapping(value = "/person.do", method = RequestMethod.GET, params = "edit")
+    @RequestMapping(value = "/person", method = RequestMethod.GET, params = "edit")
     public String getEditPerson(@RequestParam("id") long id) {
         person = repository.select(id);
         action = "edit";
-        return "redirect:/person.do";
+        return "redirect:/";
     }
 
-    @RequestMapping(value = "/person.do", method = RequestMethod.POST, params = "add")
+    @RequestMapping(value = "/person", method = RequestMethod.POST, params = "add")
     public String postAddPerson(@RequestParam("name") String name) {
         repository.insert(new Person(name));
-        return "redirect:/person.do";
+        return "redirect:/";
     }
 
-    @RequestMapping(value = "/person.do", method = RequestMethod.POST, params = "edit")
+    @RequestMapping(value = "/person", method = RequestMethod.POST, params = "edit")
     public String postEditPerson(@RequestParam("id") long id, @RequestParam("name") String name) {
         person = repository.select(id);
         person.setName(name);
         repository.update(person);
         action = "add";
         person = null;
-        return "redirect:/person.do";
+        return "redirect:/";
     }
 
-    @RequestMapping(value = "/person.do", method = RequestMethod.POST, params = "delete")
+    @RequestMapping(value = "/person", method = RequestMethod.POST, params = "delete")
     public String postDeletePerson(@RequestParam("id") long id) {
         repository.delete(id);
-        return "redirect:/person.do";
+        return "redirect:/";
     }
 }

@@ -7,7 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html>
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -21,7 +21,7 @@
 <body>
 <div class="container-fluid">
     <br>
-    <form action="<c:url value="/person.do"/>" method="post">
+    <form action="<c:url value="/person"/>" method="post">
         <input type="hidden" name="${action}">
         <input type="hidden" name="id" value="${person.id}">
         <div class="form-group">
@@ -45,14 +45,14 @@
                 <td>${p.id}</td>
                 <td>${p.name}</td>
                 <td>
-                    <form action="<c:url value="/person.do"/>" method="get">
+                    <form action="<c:url value="/person"/>" method="get">
                         <input type="hidden" name="edit">
                         <input type="hidden" name="id" value="${p.id}">
                         <input type="submit" value="edit" class="btn btn-danger btn-sm" aria-hidden="true">
                     </form>
                 </td>
                 <td>
-                    <form action="<c:url value="/person.do"/>" method="post">
+                    <form action="<c:url value="/person"/>" method="post">
                         <input type="hidden" name="delete">
                         <input type="hidden" name="id" value="${p.id}">
                         <input type="submit" value="delete" aria-hidden="true">

@@ -34,7 +34,6 @@ public class PersonRepository {
 
     public void delete(long id) {
         EntityManager em = entityManagerFactory.createEntityManager() ;
-        System.out.println("Executed ...");
         em.getTransaction().begin();
         em.createQuery("DELETE FROM Person p where p.id=:x").setParameter("x", id).executeUpdate();
         em.getTransaction().commit();
